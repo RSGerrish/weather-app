@@ -1,4 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@800&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+}
+
 header {
-  min-height: 100px;
-  background-color:aquamarine;
+  max-height: 5rem;
+  background-color:	#0a0909;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+main {
+  min-height: calc(100vh - 5rem - 5rem - 4rem);
+}
+
+footer {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444444;
+  color: #f4f4f4;
+}
+
+#logo-container {
+  display: flex;
+  align-items: flex-end;
+  font-size: 3.5rem;
+  font-family: 'Baloo Chettan 2', cursive;
+}
+
+#logo-img {
+  filter: invert(100%) sepia(12%) saturate(5943%) hue-rotate(292deg) brightness(121%) contrast(91%);
+  height: 5rem;
+  width: 5rem;
+}
+
+#search-field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#search-container {
+  text-align: end;
+}
+
+#search-label {
+  font-weight: 200;
+}
+
+#search-text {
+  border: none;
+}
+
+#search-button {
+  border: none;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+}
+
+#search-button:active {
+  background-color: #444444;
+}
+
+.main-container {
+  margin: 2rem 0;
+}
+
+#top-level {
+  display: flex;
+  justify-content: space-around;
+}
+
+#tl-logo-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+#icon-weather {
+  height: 8rem;
+  width: 8rem;
+}
+
+#city-name {
+  font-size: 3.5rem;
+  padding-bottom: 1rem;
+}
+
+#qw-container {
+  display: flex;
+  align-items: center;
+}
+
+#current-temp-container {
+  background-color: #f4f4f4;
+  border-radius: 0.25rem;
+}
+
+#weather-temp {
+  font-size: 5rem;
+  padding: 0 1rem;
+}
+
+#weather-temp-label {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+#sub-qw-container-bg {
+  background-color: #630000;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  padding: 0 0.5rem;
+  border-radius: 0.25rem;
+  color: #f4f4f4;
+  font-weight: 300;
+}
+
+#sub-qw-container {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr / fit-content(50%) fit-content(50%);
+  column-gap: 1rem;
+  white-space: nowrap;
+}
+
+.qw-label {
+  text-align: end;
+  font-weight: 500;
+}
+
+#mid-level-sub-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.sub-widget {
+  background-color: #f4f4f4;
+  color: #0a0909;
+  border-radius: 0.25rem;
+  margin: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 0.25rem black;
+}
+
+#cloud-cov-container {
+  min-width: 11rem;
+  background-image: url('./img/weather-cloudy-vwhite.svg');
+  background-size: cover;
+  background-position-y: -0.5rem;
+  display: grid;
+  grid-template: 2fr 5fr / 1fr;
+}
+
+#cloud-cov-percentage {
+  font-size: 4rem;
+}
+
+#sun-rise-container {
+  background: linear-gradient(#3B9EC5, #E8814D, #FDED64);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  margin-bottom: 0.125rem;
+  min-width: 11rem;
+  padding: 0.5rem 0;
+}
+
+#sun-set-container {
+  background: linear-gradient(#443788, #AA585B, #FD8046);
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  padding: 0.5rem 0;
+}
+
+#sun-rise-label, #sun-set-label {
+  font-weight: 800;
+}
+
+#sun-rise-time, #sun-set-time {
+  font-size: 2rem;
+}
+
+#temp-min-max-container {
+  min-width: 11rem;
+}
+
+#temp-min-container {
+  background: linear-gradient(#3eb2ff, #2861fd);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  margin-bottom: 0.125rem;
+  min-width: 11rem;
+  padding: 0.5rem 0;
+  height: 50%;
+}
+
+#temp-max-container {
+  background: linear-gradient(#da1e24, #FD8046);
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  padding: 0.5rem 0;
+  height: 50%;
+}
+
+#temp-min-label, #temp-max-label {
+  font-weight: 800;
+}
+
+#temp-min-value, #temp-max-value {
+  font-size: 2rem;
+}
+
+#vis-container {
+  min-width: 11rem;
+  background-image: url('./img/visibility-white.svg');
+  background-size: cover;
+  background-position-y: -0.5rem;
+  display: grid;
+  grid-template: 2fr 5fr / 1fr;
+}
+
+#vis-value {
+  font-size: 4rem;
 }
