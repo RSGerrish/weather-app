@@ -32,9 +32,9 @@ function weatherObj() {
     this.windDir = windDir(rawWeather.wind.deg);
     this.cloudCover = rawWeather.clouds.all
     utcDate.setUTCSeconds(rawWeather.sys.sunrise);
-    this.sysSunrise = utcDate.getHours() + ':' + utcDate.getMinutes();
+    this.sysSunrise = utcDate.getHours() + ':' + utcDate.getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
     utcDate.setUTCSeconds(rawWeather.sys.sunrise);
-    this.sysSunset = utcDate.getHours() + ':' + utcDate.getMinutes();
+    this.sysSunset = utcDate.getHours() + ':' + utcDate.getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
     utcDate.setUTCSeconds(rawWeather.dt);
     this.localTime = utcDate.toUTCString();
 

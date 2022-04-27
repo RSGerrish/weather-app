@@ -20,6 +20,7 @@ import iconWindy from '../img/weather-windy.svg';
 const uiController = () => {
   async function displayCWeather(location) {
     let weather = await weatherAPI().getWeather(location);
+    console.log(weather);
 
     const weatherIcon = document.querySelector('#icon-weather');
     const locNameElement = document.querySelector('#city-name');
@@ -35,18 +36,18 @@ const uiController = () => {
     const vis = document.querySelector('#vis-value');
     const windDir = document.querySelector('#weather-wind-dir');
 
-    locNameElement.innerHTML = weather.locName;
-    weatherTemp.innerHTML = Math.round(weather.mainTemp + Number.EPSILON) + String.fromCharCode(176);
-    wMainDesc.innerHTML = weather.weatherMain;
-    wMainHum.innerHTML = weather.mainHum + " %";
-    wMainPress.innerHTML = Math.round((weather.mainPress + Number.EPSILON)* 10) / 10 + " in";
-    cloudCov.innerHTML = weather.cloudCover + " %";
-    sRiseTime.innerHTML = weather.sysSunrise;
-    sSetTime.innerHTML = weather.sysSunset;
-    tMin.innerHTML = Math.round(weather.mainMin + Number.EPSILON) + String.fromCharCode(176);
-    tMax.innerHTML = Math.round(weather.mainMax + Number.EPSILON) + String.fromCharCode(176);
-    vis.innerHTML = Math.round((weather.visDistance + Number.EPSILON) * 10) / 10 + " mi";
-    windDir.innerHTML = weather.windDir;
+    locNameElement.innerHTML = await weather.locName;
+    weatherTemp.innerHTML = await Math.round(weather.mainTemp + Number.EPSILON) + String.fromCharCode(176);
+    wMainDesc.innerHTML = await weather.weatherMain;
+    wMainHum.innerHTML = await weather.mainHum + " %";
+    wMainPress.innerHTML = await Math.round((weather.mainPress + Number.EPSILON)* 10) / 10 + " in";
+    cloudCov.innerHTML = await weather.cloudCover + " %";
+    sRiseTime.innerHTML = await weather.sysSunrise;
+    sSetTime.innerHTML = await weather.sysSunset;
+    tMin.innerHTML = await Math.round(weather.mainMin + Number.EPSILON) + String.fromCharCode(176);
+    tMax.innerHTML = await Math.round(weather.mainMax + Number.EPSILON) + String.fromCharCode(176);
+    vis.innerHTML = await Math.round((weather.visDistance + Number.EPSILON) * 10) / 10 + " mi";
+    windDir.innerHTML = await weather.windDir;
 
     if (weather.weatherID > 800 && weather.weatherID <= 802) { //Partly Cloudy
       weatherIcon.src = iconPartlyCloudy;
